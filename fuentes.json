@@ -1,0 +1,27 @@
+[
+  {
+    "bloque": "Actividad económica",
+    "fuente": "INEGI",
+    "detalle": "Sistema de Cuentas Nacionales, PIB/VAB, IGAE e indicadores de construcción"
+  },
+  {
+    "bloque": "Mercado laboral",
+    "fuente": "INEGI ENOE / ENEC; IMSS",
+    "detalle": "Población ocupada, índices de personal/horas/remuneraciones y SBC"
+  },
+  {
+    "bloque": "Producción",
+    "fuente": "RUV / SNIIV / CONAVI",
+    "detalle": "Registro, inicio, producción e inventario de vivienda"
+  },
+  {
+    "bloque": "Precios",
+    "fuente": "SHF / INEGI",
+    "detalle": "Índice SHF, INPP y precio promedio estatal de avalúo"
+  },
+  {
+    "bloque": "Condiciones habitacionales",
+    "fuente": "INEGI ENIGH / INEGI pobreza multidimensional / CONAVI",
+    "detalle": "Tenencia, carencias, materiales y déficit cualitativo"
+  }
+]
