@@ -1,38 +1,26 @@
-# Indicadores de Vivienda y Construcción Residencial en México
+# Dashboard de vivienda — GitHub Pages (sin Actions)
 
-Dashboard estático preparado para **GitHub Pages mediante GitHub Actions**.
+Esta versión está preparada para publicarse como sitio estático directamente desde la rama `main` y la carpeta raíz del repositorio.
 
 ## Publicación
 
-1. Descomprime el paquete.
-2. Sube **todos los archivos y carpetas** a la raíz de la rama `main`.
-3. En `Settings > Pages > Build and deployment`, selecciona **GitHub Actions** como `Source`.
-4. Abre `Actions > Publicar dashboard en GitHub Pages` y comprueba que la ejecución termine correctamente.
-5. Regresa a `Settings > Pages` y usa **Visit site**.
+1. Sube **el contenido de esta carpeta** directamente a la raíz del repositorio. `index.html` debe quedar visible en la página principal del repositorio, no dentro de otra carpeta.
+2. En GitHub abre **Settings → Pages**.
+3. En **Build and deployment → Source** selecciona **Deploy from a branch**.
+4. Selecciona **Branch: main** y **Folder: /(root)**.
+5. Presiona **Save**.
+6. Regresa a **Settings → Pages** para abrir el enlace publicado cuando GitHub indique que el sitio está activo.
 
-Consulta `SUBIR_A_GITHUB.md` para instrucciones detalladas.
+No se utilizan GitHub Actions ni workflows de despliegue.
 
-## Estructura mínima
+## Archivos principales
 
-```text
-index.html
-styles.css
-app.js
-charts.js
-maps.js
-bootstrap-data.js
-local-data.js
-.github/
-  workflows/
-    pages.yml
-```
+- `index.html`: entrada del dashboard.
+- `styles.css`: estilos.
+- `app.js`, `charts.js`, `maps.js`, etc.: lógica del dashboard.
+- Archivos `.csv` y `.json`: datos locales utilizados por el sitio.
+- `.nojekyll`: evita que GitHub Pages procese el contenido mediante Jekyll.
 
-`index.html` se encuentra en la raíz y las rutas a los recursos son relativas, por lo que funciona como sitio de proyecto (`usuario.github.io/repositorio/`).
+## Importante
 
-## Actualización
-
-El workflow `pages.yml` publica cambios hechos en `main` y también puede ejecutarse manualmente o por calendario. En las ejecuciones manuales/programadas intenta actualizar las fuentes configuradas, valida los archivos y publica el resultado en la misma ejecución.
-
-## Regla de integridad
-
-El dashboard no interpola periodos faltantes ni genera observaciones para rellenar huecos. Las series conservan la periodicidad y universo de la fuente correspondiente.
+Si el repositorio ya tenía un workflow en `.github/workflows`, elimínalo del repositorio para mantener esta configuración completamente sin Actions.

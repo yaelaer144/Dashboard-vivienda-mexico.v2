@@ -1,53 +1,34 @@
-# Publicar el dashboard en GitHub Pages
+# Cómo generar el enlace de GitHub Pages sin Actions
 
-Esta versión usa **GitHub Actions** para publicar el sitio. No uses `Deploy from a branch`.
-
-## 1. Sube los archivos
-
-Descomprime el ZIP y sube **todo su contenido** a la raíz del repositorio. En la página principal del repositorio debes ver, entre otros:
+## 1. Verifica la raíz del repositorio
+En la pestaña **Code** deben verse directamente archivos como:
 
 - `index.html`
 - `styles.css`
 - `app.js`
-- `.github/workflows/pages.yml`
+- los CSV y JSON del dashboard
 
-No subas solamente el ZIP.
+No debe verse una carpeta contenedora como `dashboard_vivienda_GITHUB_STATIC_20260908/` con todos los archivos adentro.
 
 ## 2. Configura Pages
+Ve a:
 
-En GitHub entra a:
+**Settings → Pages → Build and deployment**
 
-`Settings > Pages > Build and deployment`
+Selecciona:
 
-En **Source** selecciona:
+- **Source:** Deploy from a branch
+- **Branch:** main
+- **Folder:** /(root)
 
-`GitHub Actions`
+Después pulsa **Save**.
 
-No selecciones `Deploy from a branch` para esta versión.
+## 3. Enlace
+GitHub mostrará en la misma pantalla un aviso **Your site is live at** cuando la publicación esté disponible.
 
-## 3. Comprueba el despliegue
+La dirección normalmente tendrá la forma:
 
-Ve a la pestaña **Actions** del repositorio y abre:
+`https://USUARIO.github.io/REPOSITORIO/`
 
-`Publicar dashboard en GitHub Pages`
-
-La ejecución debe terminar en verde. El paso final se llama **Publicar GitHub Pages**.
-
-Después vuelve a `Settings > Pages`. GitHub mostrará el botón **Visit site** y la URL publicada.
-
-## 4. Si no aparece el workflow
-
-Comprueba que el archivo exista exactamente en:
-
-`.github/workflows/pages.yml`
-
-Si cargaste los archivos desde el navegador y la carpeta `.github` no se incluyó, vuelve a subirla.
-
-## 5. Actualización automática
-
-El mismo workflow:
-
-- publica cualquier cambio que hagas en `main`;
-- permite ejecución manual desde **Actions > Run workflow**;
-- revisa actualizaciones los lunes a las 07:00, hora de Ciudad de México;
-- publica el sitio dentro de la misma ejecución, incluso cuando la actualización automática modifica archivos.
+## 4. Esta versión no usa Actions
+No se incluye `.github/workflows` ni se necesita seleccionar **GitHub Actions** como fuente de Pages.
